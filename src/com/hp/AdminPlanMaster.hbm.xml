@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-Aug-2016 13:00:30 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hp.AdminPlanMaster" table="admin_plan_master" catalog="onlinejobportal">
+        <id name="planId" type="java.lang.Integer">
+            <column name="planId" />
+            <generator class="identity" />
+        </id>
+        <property name="planType" type="string">
+            <column name="plan_type" length="20" not-null="true" />
+        </property>
+        <property name="durationMode" type="string">
+            <column name="duration_mode" length="6" not-null="true" />
+        </property>
+        <property name="duration" type="string">
+            <column name="duration" length="4" not-null="true" />
+        </property>
+        <property name="rent" type="string">
+            <column name="rent" length="8" not-null="true" />
+        </property>
+        <property name="specification" type="string">
+            <column name="specification" length="70" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

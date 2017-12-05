@@ -1,0 +1,519 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.ui.theme" value="bootstrap" />
+    <!-- Configuration for the default package. -->
+   <package name="default" extends="struts-default">
+       
+       
+        <result-types>
+    <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>    </result-types>
+       
+    
+        <action name="*Link" method="master" class="com.hp.kk">
+            <result name="master" type="tiles">inboxTile</result>
+        </action>
+        
+         <action name="notification">
+            <result>/notification.jsp</result>
+        </action>
+        
+        
+        <action name="seeall" method="getAllEmp" class="com.hp.jobprofiletableoutputaction">
+            <result name="success" type="tiles">showjobprofileTile</result>
+        </action>
+        
+        
+        
+        
+          <action name="Home" method="master" class="com.hp.kk">
+            <result name="master" type="tiles">inboxTile</result>
+        </action>
+        
+         <action name="sp">
+            <result type="tiles">spTile</result>
+        </action>
+        
+       <action name="registration">
+            <result type="tiles">regTile</result>
+        </action>
+        
+        <action name="jSIGNUP">
+            <result type="tiles">jspTile</result>
+        </action>
+        
+        
+        
+          <action name="JobSeeker">
+            <result type="tiles">jsTile</result>
+        </action>
+        
+          <action name="CLIENT">
+            <result type="tiles">inboxTile</result>
+        </action>
+        
+          <action name="EMPLOYER">
+            <result type="tiles">inboxTile</result>
+        </action>
+        
+          <action name="ADMINISTRATOR">
+            <result type="tiles">inboxTile</result>
+        </action>
+        
+          <action name="CONTACTUS">
+            <result type="tiles">inboxTile</result>
+        </action>
+        
+        
+        
+        
+        
+        
+        
+       
+       <action name="about">
+            <result type="tiles">abTile</result>
+        </action>
+        <action name="articles">
+            <result type="tiles">arTile</result>
+        </action>
+        
+       
+      <!-- <action name="pic">
+            <result type="tiles">picTile</result>
+        </action>-->
+       
+       
+       
+       <action name="sT" class="com.hp.SearchAction">
+           <result name="input" type="tiles">inboxTile</result>
+           <result name="success" type="tiles">sTile</result>
+       </action>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+         <action name="AdminLogin"> 
+            <result name="success" type="tiles">AdminLoginTile</result>
+        </action> 
+        
+         <action name="Employers" class="com.hp.LogoutAdmin"> 
+            <result name="success" type="redirect">adminemployershow</result>
+            <result name="error" type="tiles">AdminLoginTile</result>
+        </action> 
+        
+         <action name="adminemployershow" method="getAllEmp" class="com.hp.employeeDetailsOutputAction" > 
+            <result name="success" type="tiles">adminemployershowTile</result>
+            <result name="error" type="tiles">AdminLoginTile</result>
+        </action>
+        
+        
+         <action name="Jobseeker" class="com.hp.LogoutAdmin"> 
+            <result name="success" type="redirect">adminjobseekershow</result>
+            <result name="error" type="tiles">AdminLoginTile</result>
+        </action> 
+        <action name="adminjobseekershow" method="getAllEmp" class="com.hp.Utility1" > 
+            <result name="success" type="tiles">adminjobseekershowTile</result>
+            <result name="error" type="tiles">AdminLoginTile</result>
+        </action> 
+        
+         <action name="infojobseekeremp" class="com.hp.LogoutAdmin"> 
+            <result name="success" type="redirect">adminjobseekershow1</result>
+            <result name="error" type="redirect">Employer</result>
+        </action> 
+        
+         <action name="adminjobseekershow1" method="getAllEmp" class="com.hp.Utility1" > 
+            <result name="success" type="tiles">adminjobseekershowTile1</result>
+            <result name="error" type="redirect">Employer</result>
+        </action> 
+        
+        <action name="sendmail" class="com.hp.SendmailAction"> 
+            <result name="success" type="tiles">successfullysendTile</result>
+            <result name="error" type="redirect">jobView1</result>
+        </action> 
+        
+        
+        
+        <action name="deleteJobseeker" method="Delete" class="com.hp.Deletejobseeker" > 
+            <result name="success" type="redirect">adminjobseekershow</result>
+            <result name="input" type="redirect">adminjobseekershow</result>
+        </action> 
+        
+         <action name="deleteEmployer" method="Delete" class="com.hp.Deleteemployer" > 
+            <result name="success" type="redirect">adminemployershow</result>
+            <result name="input" type="redirect">adminemployershow</result>
+        </action> 
+        
+        
+        
+        <action name="Articles" class="com.hp.LogoutAdmin"> 
+            <result name="success" type="tiles">ArticleTile</result>
+            <result name="error" type="tiles">AdminLoginTile</result>
+        </action> 
+          <action name="articleaction" class="com.hp.ArticleAction">
+              <!--result name="input" type="tiles">ArticleTile</result>-->
+            <result name="success" type="tiles">ArticleTile</result>
+        </action> 
+        <action name="ViewArticle" class="com.hp.ViewArticles">
+              <result name="input" type="tiles">ArticleTile</result>
+            <result name="success" type="tiles">ArticleshowTile</result>
+        </action> 
+        
+        <action name="viewjobseekerarticles" class="com.hp.ViewArticles">
+              <result name="input" type="tiles">inboxTile</result>
+            <result name="success" type="tiles">ArticleshowTile1</result>
+        </action> 
+        
+        
+        
+        
+        
+        
+         <action name="deleteArticles" method="Delete" class="com.hp.deleteArticles">
+              <result name="input" type="redirect">ViewArticle</result>
+            <result name="success" type="redirect">ViewArticle</result>
+        </action> 
+        
+        
+        <action name="adminloginact" class="com.hp.AdminLoginAction"> 
+            <result name="input" type="tiles">AdminLoginTile</result>
+             <result name="success" type="tiles">adminprofiletile</result>
+            
+        </action> 
+        <action name="logoutadmin" method="logout" class="com.hp.AdminLoginAction"> 
+            <result name="success" type="tiles">AdminLoginTile</result>
+             <result name="input" type="tiles">adminprofiletile</result>
+            
+        </action> 
+        
+         <action name="postJobs"  class="com.hp.postjobsAct"> 
+            <result name="success" type="tiles">jobprofileTile</result>
+            <result name="error" type="redirect">Employer</result>
+        </action> 
+        <action name="ViewOrDeleteJobs"  class="com.hp.postjobsAct"> 
+            <result name="success" type="redirect">jobprofileupdate</result>
+            <result name="error" type="redirect">Employer</result>
+        </action> 
+        <action name="jobprofileAct" class="com.hp.jobprofileAction"> 
+            
+            <result name="input" type="tiles">jobprofileTile</result> 
+             <result name="success" type="redirect">jobprofileupdate</result>
+            
+        </action> 
+        <action name="ViewJobs"  class="com.hp.Logoutjobseeker"> 
+            <result name="success" type="redirect">jobView1</result>
+            <result name="error" type="tiles">inboxTile</result>
+        </action> 
+        
+         <action name="jobView1" method="getAllEmp" class="com.hp.jobprofiletableoutputaction">
+              <result name="success" type="tiles">showjobprofileTile2</result>   
+        </action>
+        
+         <action name="jobView" method="getAllEmp" class="com.hp.jobprofiletableoutputaction">
+              <result name="success" type="tiles">showjobprofileTile1</result>   
+        </action>
+        <action name="loginjobseeker"> 
+            <result name="success" type="tiles">inboxTile</result>
+        </action> 
+        
+        
+        <!-- <action name="jobprofileupdate"> 
+            <result name="success">jobprofiletableupdate.jsp</result>
+        </action> 
+        <action name="jobprofileupdateAct" class="com.hp.jobprofiletableupdateAction"> 
+            
+            
+            <result name="input">showintablejobprofile.jsp</result>
+             <result name="success">showintablejobprofile.jsp</result>
+            
+        </action> -->
+        
+        <action name="updateUser"> 
+         <!--   <result name="input" type="redirect">jobprofileoutput</result>-->
+             <result name="success" type="tiles">jobupdateTile</result>
+            
+        </action> 
+        
+        <action name="jobprofiletableupdate" class="com.hp.jobprofiletableupdateAction"> 
+            <result name="success" type="redirect">jobprofileupdate</result>
+        </action>
+        
+        
+       <!-- <action name="jobprofiletableupdate" class="com.hp.jobprofiletableupdateAction"> 
+            <result name="success" type="redirect">jobprofileoutput</result>
+        </action>--> 
+        
+        <!--<action name="updateUser"> 
+            <result name="success">jobprofiletableupdate.jsp</result>
+        </action>
+        <action name="jobprofileupdateAct" class="com.hp.jobprofiletableupdateAction">
+            <result name="success" type="redirect">jobprofileoutput</result>
+        </action>-->
+        <action name="readJob">
+            <result name="success" type="tiles">jobprofilecomp</result>
+        </action>
+        
+       <action name="Employer">
+            <result name="success" type="tiles">elog</result>
+        </action>
+        
+        
+        <action name="eSIGNUP">
+            <result name="success" type="tiles">esignup</result>
+        </action>
+        <action name="logout" method="logout" class="com.hp.EmpLoginAction" >
+              <result name="input" type="tiles">empactionTile</result>
+            <result name="success" type="tiles">inboxTile</result> 
+        </action>
+        
+        
+        <action name="logoutjobseeker" method="logout" class="com.hp.JobseekerloginAction" >
+              <result name="input" type="tiles">jobseekerafterloginTile</result>
+            <result name="success" type="tiles">inboxTile</result> 
+        </action>
+        
+        <!--action name="myjob" class="com.hp.Logoutjobseeker" >
+              <result name="error" type="tiles">inboxTile</result>
+            <result name="success" type="tiles">showjobTile</result> 
+        </action-->
+        
+        <action name="myjob" method="jobforjobseeker" class="com.hp.perjobseekerdetails">
+              <result name="error" type="tiles">inboxTile</result>
+              <result name="input" type="tiles">inboxTile</result>
+            <result name="success" type="tiles">showjobjobseekerTile</result> 
+        </action>
+        
+        
+        <action name="showMyPic1" method="showPic" class="com.hp.perjobseekerdetails"/>
+        <action name="showMyResume1" method="showResume" class="com.hp.perjobseekerdetails"/>
+        
+        <action name="updatejobseeker" class="com.hp.Logoutjobseeker" >
+              <result name="error" type="tiles">inboxTile</result>
+            <result name="success" type="tiles">showupdatejobTile</result> 
+        </action>
+        <action name="updatejobo" class="com.hp.Updatetojobseekeraction" >
+              <result name="input" type="tiles">inboxTile</result>
+            <result name="success" type="redirect">showjobseeker</result> 
+        </action>
+        
+        
+        
+         <action name="showjobseeker" class="com.hp.Logoutjobseeker" >
+              <result name="error" type="tiles">inboxTile</result>
+            <result name="success" type="redirect">showperuser</result> 
+        </action>
+        
+        
+         <action name="showperuser" method="getAllEmp" class="com.hp.perjobseekerdetails" >
+              <result name="input" type="tiles">inboxTile</result>
+            <result name="success" type="tiles">showperuserTile</result> 
+        </action>
+        
+        
+        
+         <action name="deleteUser" method="delete" class="com.hp.jobprofiledeleteAction"> 
+            <result name="input"  type="redirect">jobprofileupdate</result>
+             <result name="success"  type="redirect">jobprofileupdate</result>
+            
+        </action> 
+        
+         <action name="jobprofileadd">
+            <result name="input" type="redirect">jobprofileupdate</result>
+            <result name="success"  type="tiles">jobprofileTile</result> 
+        </action>
+        
+        
+        
+        
+        
+        
+        <action name="jobprofileupdate" method="getAllEmp" class="com.hp.jobprofiletableoutputaction">
+              <result name="success" type="tiles">showjobprofileTile</result>   
+        </action>
+        
+        
+        
+        
+        
+        
+        <action name="updatejob" method="getAllEmp" class="com.hp.jobprofiletableoutputaction">
+            <result name="success">showintablejobprofile.jsp</result>
+        </action> 
+       
+        
+        
+        
+        
+        
+        
+         <action name="edi"> 
+            <result name="success">empDetailsinput.jsp</result>
+        </action> 
+        <action name="empldetailinputact" class="com.hp.EmpdetailsinputAction"> 
+            <result name="input" type="redirect">Employer</result>
+             <result name="success" type="redirect">Employer</result>
+            
+        </action>
+        
+            <action name="edo" method="getAllEmp" class="com.hp.employeeDetailsOutputAction">
+            <result name="success">empDetailsOutput.jsp</result>
+        </action> 
+        
+        
+        
+        <action name="jsl"> 
+            <result name="success" type="tiles">inboxTile</result>
+        </action>
+        
+      <!-- <action name="jobseekerloginAct" class="com.hp.JobseekerloginAction"> 
+            <result name="input">jobseekerlogin.jsp</result>
+             <result name="success">index.jsp</result>
+            
+        </action> --> 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         <action name="es"> 
+            <result name="success">employeeSignup.jsp</result>
+        </action> 
+          <action name="empSignup" class="com.hp.employeeSignupAction"> 
+            <result name="input">employeeSignup.jsp</result>
+             <result name="success">index.jsp</result>
+            
+        </action> 
+        
+         <action name="el"> 
+            <result name="success">employeeLogin.jsp</result>
+        </action> 
+          <action name="employeeLoginAct" class="com.hp.EmpLoginAction"> 
+            <result name="input" type="redirect">Employer</result>
+            <result name="error" type="redirect">Employer</result>
+             <result name="success" type="tiles">empactionTile</result>
+            
+        </action> 
+        
+        
+        <!-- <action name="jobseekerdetailsInput"> 
+            <result name="success">jobSeekerDetailsInput.jsp</result>
+        </action> -->
+        
+       <action name="showMyPic" method="showPic" class="com.hp.Utility1"/>
+        <action name="showMyResume" method="showResume" class="com.hp.Utility1"/>
+        <action name="jobseekerdetailsInput"> 
+            <result name="success">jobSeekerDetailsInput.jsp</result>
+        </action> 
+        <action name="jobseekerdetailsOutput" method="getAllEmp" class="com.hp.Utility1">
+            <result name="success">jobseekerDetailsOutput.jsp</result>
+        </action> 
+        
+        <action name="jsdiA" class="com.hp.JobseekerDetailsInputAction">
+            
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">2012238</param>
+                <param name="allowedTypes">image/jpg,test/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+                image/png,image/JPEG,image/JPG,image/jpeg,image/jpeg,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/msword,application/vnd.ms-excel
+                </param>
+            
+            </interceptor-ref>
+             <interceptor-ref name="fileUpload">
+                <param name="maximumSize">2012238</param>
+                <param name="allowedTypes"> test/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msword,aplication/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/msword,image/jpg,image/jpeg,image/jpg,
+                image/png,image/JPEG,image/JPG,image/jpeg,image/jpeg
+                </param>
+            </interceptor-ref>
+            <result name="success" type="redirect">jsl</result>
+            <result name="input">jobSeekerDetailsInput.jsp</result>
+            <result name="error">jobSeekerDetailsInput.jsp</result>
+        </action>
+        
+        
+        
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<action name="login" class="com.hp.JobseekerloginAction">
+            <result name="success" type="tiles">jobseekerafterloginTile</result>
+            <result name="error" type="tiles">inboxTile</result>
+            <result name="input" type="tiles">inboxTile</result>
+        </action>
+        
+        <action name="signup" class="com.hp.AddNewEmpAction">
+            <result name="success" type="tiles">jsdiTile</result>
+            <result name="error">signup.jsp</result>
+            <result name="input">signup.jsp</result>
+        </action>
+        
+        
+        
+        
+        
+        <action name="verify_activation" class="com.hp.verify_activation">
+            <result name="success" type="tiles">inboxTile1</result>
+            <result name="error">Error.jsp</result>
+            <result name="input">activation_Failed.jsp</result>
+        </action>
+        
+
+<action name="faQs" >
+            <result type="tiles">problemTile</result>
+</action>
+
+<action name="klm" >
+            <result type="tiles">inboxTile</result>
+</action>
+
+
+    
+<action name="faqssubmit" class="com.hp.FaqsAction" >
+            <result name="success" type="tiles">problemTile</result>
+                        <result name="input" type="tiles">problemTile</result>
+                                                <result name="error" type="tiles">problemTile</result>
+
+
+</action>
+
+
+
+
+
+
+        <action name="showAllEmp" method="getAllEmp" class="com.hp.Utility">
+            <result name="success">signupDetails.jsp</result>
+        </action> 
+          <action name="addNew">
+            <result name="success">signup.jsp</result>
+        </action> 
+        <!--<action name="signup" class="com.hp.AddNewEmpAction">
+            <result name="success">index.jsp</result>
+            
+        </action>-->
+    </package>
+</struts>

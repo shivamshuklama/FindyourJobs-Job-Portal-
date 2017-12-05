@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-Aug-2016 13:00:30 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hp.AdminArticles" table="admin_articles" catalog="onlinejobportal">
+        <id name="articalId" type="java.lang.Integer">
+            <column name="artical_id" />
+            <generator class="identity" />
+        </id>
+        <property name="articalName" type="string">
+            <column name="artical_name" length="200" not-null="true" />
+        </property>
+        <property name="postedOn" type="date">
+            <column name="posted_on" length="45" not-null="true"></column>
+        </property>
+        <property name="articalDesc" type="string">
+            <column name="articalDesc" length="200" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

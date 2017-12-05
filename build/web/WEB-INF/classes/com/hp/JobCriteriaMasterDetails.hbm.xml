@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-Aug-2016 13:00:30 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hp.JobCriteriaMasterDetails" table="job_criteria_master_details" catalog="onlinejobportal">
+        <id name="loginid" type="int">
+            <column name="loginid" />
+            <generator class="assigned" />
+        </id>
+        <property name="location" type="string">
+            <column name="location" length="45" not-null="true" />
+        </property>
+        <property name="desireJob" type="string">
+            <column name="desire_job" length="45" not-null="true" />
+        </property>
+        <property name="workExperience" type="int">
+            <column name="work_experience" not-null="true" />
+        </property>
+        <property name="minimumAcceptedSalary" type="int">
+            <column name="minimum_accepted_salary" not-null="true" />
+        </property>
+        <property name="maximumSalary" type="int">
+            <column name="maximum_salary" not-null="true" />
+        </property>
+        <property name="oldDesignation" type="string">
+            <column name="old_designation" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

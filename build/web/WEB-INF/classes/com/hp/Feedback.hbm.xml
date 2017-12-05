@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-Aug-2016 13:00:30 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hp.Feedback" table="feedback" catalog="onlinejobportal">
+        <id name="loginid" type="int">
+            <column name="loginid" />
+            <generator class="foreign">
+                <param name="property">login</param>
+            </generator>
+        </id>
+        <one-to-one name="login" class="com.hp.Login" constrained="true"></one-to-one>
+        <property name="feedback" type="string">
+            <column name="feedback" length="45" not-null="true" />
+        </property>
+        <property name="feedbackDate" type="timestamp">
+            <column name="feedback_date" length="19" not-null="true" />
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-Aug-2016 13:00:30 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hp.CompanyMaster" table="company_master" catalog="onlinejobportal">
+        <id name="companyCode" type="java.lang.Integer">
+            <column name="company_code" />
+            <generator class="identity" />
+        </id>
+        <property name="companyName" type="string">
+            <column name="company_name" length="20" not-null="true" />
+        </property>
+        <property name="headOfficeCity" type="string">
+            <column name="head_officeCity" length="20" not-null="true" />
+        </property>
+        <property name="headOfficeContNumber" type="long">
+            <column name="head_officeCont_number" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="numberOfBranch" type="short">
+            <column name="numberOfBranch" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="emailId" type="string">
+            <column name="email_id" length="45" not-null="true" />
+        </property>
+        <property name="website" type="string">
+            <column name="website" length="45" not-null="true" />
+        </property>
+        <property name="companyType" type="string">
+            <column name="company_type" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

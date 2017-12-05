@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-Aug-2016 13:00:30 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hp.JobProfile" table="job_profile" catalog="onlinejobportal">
+        <id name="username" type="string">
+            <column name="username" length="45" />
+            <generator class="assigned" />
+        </id>
+        <property name="jobCode" type="int">
+            <column name="jobCode" not-null="true" />
+        </property>
+        <property name="jobTitle" type="string">
+            <column name="jobTitle" length="45" not-null="true" />
+        </property>
+        <property name="jobReq" type="string">
+            <column name="jobReq" length="45" not-null="true" />
+        </property>
+        <property name="jobLocation" type="string">
+            <column name="jobLocation" length="45" not-null="true" />
+        </property>
+        <property name="skillSet" type="string">
+            <column name="skillSet" length="45" not-null="true" />
+        </property>
+        <property name="postDate" type="timestamp">
+            <column name="postDate" length="19" not-null="true" />
+        </property>
+        <property name="expiryDate" type="timestamp">
+            <column name="expiryDate" length="19" not-null="true" />
+        </property>
+        <property name="contactInfo" type="string">
+            <column name="contactInfo" length="45" not-null="true" />
+        </property>
+         <property name="fskill" type="string">
+            <column name="fskill" length="45" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-Aug-2016 13:00:30 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hp.EmployeeContact" table="employee_contact" catalog="onlinejobportal">
+        <id name="username" type="string">
+            <column name="username" length="45" />
+            <generator class="assigned" />
+        </id>
+        <property name="empName" type="string">
+            <column name="emp_name" length="45" not-null="true" />
+        </property>
+        <property name="empDesg" type="string">
+            <column name="emp_desg" length="45" not-null="true" />
+        </property>
+        <property name="empNumber" type="int">
+            <column name="emp_number" not-null="true" />
+        </property>
+        <property name="empCmpName" type="string">
+            <column name="emp_cmpName" length="45" not-null="true" />
+        </property>
+        <property name="empCompAddress" type="string">
+            <column name="emp_compAddress" length="45" not-null="true" />
+        </property>
+        <property name="empCompState" type="string">
+            <column name="emp_compState" length="45" not-null="true" />
+        </property>
+        <property name="empCompCity" type="string">
+            <column name="emp_compCity" length="45" not-null="true" />
+        </property>
+        <property name="empCompanyProfile" type="string">
+            <column name="emp_companyProfile" length="45" not-null="true" />
+        </property>
+        <property name="empCompWebsite" type="string">
+            <column name="emp_comp_website" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
